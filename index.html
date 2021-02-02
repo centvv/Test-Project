@@ -86,9 +86,15 @@
 		<script src="./js/script.js"></script>
 		<script src="./js/main.js"></script>
 
+
+		<!-- <script src="./js/pong.js"></script> -->
+
+	
 	</head>
 
 	<body>
+
+		
 
 		<!-- Fallback when JavaScript is not available -->
 		<noscript>
@@ -98,14 +104,25 @@
 			</div>
 		</noscript>
 
+	
+
 		<div id="monogatari">
 			<visual-novel>
 				<language-selection-screen></language-selection-screen>
+				
+				<head>
+					
+			
+					<canvas id="stage" height="400" width="520"></canvas>
+		
+					<script src="js/cent.js"></script>
+				</head>
 				<loading-screen></loading-screen>
 				<main-screen>
 					<main-menu></main-menu>
 				</main-screen>
 				<game-screen>
+					
 					<dialog-log></dialog-log>
 					<text-box></text-box>
 					<quick-menu></quick-menu>
@@ -118,6 +135,8 @@
 				<help-screen></help-screen>
 			</visual-novel>
 		</div>
+
+		
 	</body>
 
 </html>
