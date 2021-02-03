@@ -130,17 +130,45 @@ monogatari.script ({
 		'y Thats awesome!',
 		'y Then you are ready to go ahead and create an amazing Game!',
 		'y I can’t wait to see what story you’ll tell!',
-		'end'
-	],
+
+		{
+			'Input': {
+					'Class': 'questions',
+					'Text': 'INPUT THE CODE',
+					'Validation': function (input) {
+							return input.trim ().length > 0;
+					},
+					'Save': function (input) {
+						this.storage ({
+						player: {
+								ans: input
+							}
+							});
+						return true;
+						},
+						'Revert': function () {
+						this.storage ({
+						player: {
+							ans: ''
+							}
+							});
+						},
+						'Warning': 'You must enter a code!'
+					}
+				},
+				{'Conditional': {
+					'Condition': function () {
+						return this.storage ('player').ans == "3efgt";
+					},
+					'True': 'jump scene2',
+					'False': 'jump No',
+				}},
+			],
 
 	'No': [
 
-		'y You can do it now.',
-
-		'show message Help',
-
-		'y Go ahead and create an amazing Game!',
-		'y I can’t wait to see what story you’ll tell!',
-		'end'
+		'y You can do it now.: <a href="js/game.html" target="_blank" style="color: aqua;">Click here to start the mini game</a>',
+		'jump Yes',
+		
 	]
 });
